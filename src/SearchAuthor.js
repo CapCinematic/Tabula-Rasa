@@ -48,7 +48,7 @@ class SearchAuthor extends Component {
 
       return (
         <div>
-          <h2 className="search-title">Choose An author</h2>
+          <h2 className="search-title">Select An author</h2>
           <aside className="authors-list">
             <ul>
               {authors.map((author) => (
@@ -59,7 +59,7 @@ class SearchAuthor extends Component {
               ))}
             </ul>
           </aside>
-          <div>
+          <div className="author-content">
             {selectedAuthor && (
               <span>
                 <h3> Quotes by {selectedAuthor}</h3>
@@ -75,6 +75,7 @@ class SearchAuthor extends Component {
           <aside className="favorite-aside">
           {favorites.length && <FavoriteQuotes favorites={this.state.favorites}/>}
           </aside>
+          <button className="home-button">Return Home</button>
         </div>
       )
     }
