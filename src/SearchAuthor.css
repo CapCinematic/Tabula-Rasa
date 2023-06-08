@@ -1,0 +1,94 @@
+.search-title {
+  border:5px solid sandybrown;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.author-content {
+  border: 1px solid salmon;
+  border-radius: 5px;
+  margin-left: 30%;
+  margin-right: 20%;
+  text-align: center;
+}
+
+.authors-list {
+  border: 1px solid black;
+  float: left;
+  width: 30%;
+  margin-right: 30px;
+  margin-bottom: 32px;
+}
+
+.authors-list ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.authors-list li{
+  cursor: pointer;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.authors-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.favorite-aside {
+  float: right;
+  width: 30%;
+  margin-left: 30px;
+}
+
+.favorite-aside p {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.favorite-aside li {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.home-button{
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.home-button:hover{
+  background-color: #3e8e41;
+}
+
+.quotes-list {
+  margin-top: 32px;
+}
+
+.quotes-list h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.quotes-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quotes-list li {
+  margin-bottom: 8px;
+}
