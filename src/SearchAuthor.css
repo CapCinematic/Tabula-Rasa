@@ -1,0 +1,47 @@
+.search-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.authors-list {
+  margin-bottom: 32px
+}
+
+.authors-list ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.authors-list li{
+  cursor: pointer;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.authors-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.quotes-list {
+  margin-top: 32px;
+}
+
+.quotes-list h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.quotes-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quotes-list li {
+  margin-bottom: 8px;
+}

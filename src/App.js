@@ -1,13 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import React, { Component } from 'react';
-import FetchData from './apiCalls';
-import Homepage from './Hompage';
+import React from 'react';
+// import Homepage from './Hompage';
 import './Homepage.css'
+import SearchAuthor from './SearchAuthor';
 
 function App() {
   return (
-   <Homepage/>
+   <SearchAuthor/>
   );
 }
 
