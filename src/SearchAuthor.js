@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import './SearchAuthor.css'
+import FavoriteQuotes from "./FavoriteQuotes";
 
 class SearchAuthor extends Component {
     state = {
@@ -10,7 +11,7 @@ class SearchAuthor extends Component {
     };
 
     componentDidMount() {
-      fetch('https://api.quotable.io/authors?sortBy=name&limit=10')
+      fetch('https://api.quotable.io/authors?sortBy=name&limit=20')
       .then((response) => response.json())
       .then((data) => {
         this.setState({
@@ -54,7 +55,6 @@ class SearchAuthor extends Component {
                 <li key={author._id}
                     onClick={() => this.handleAuthorClick(author.name)}>
                       {author.name}
-                  
                 </li>
               ))}
             </ul>
@@ -72,7 +72,9 @@ class SearchAuthor extends Component {
               </span>
             )}
           </div>
-          {/* {favorites.length && <FavoriteQuotes favorites={this.state.favorites}/>} */}
+          <aside className="favorite-aside">
+          {favorites.length && <FavoriteQuotes favorites={this.state.favorites}/>}
+          </aside>
         </div>
       )
     }
