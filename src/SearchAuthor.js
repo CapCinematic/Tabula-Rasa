@@ -8,7 +8,8 @@ class SearchAuthor extends Component {
       authors : [],
       selectedAuthor: null,
       quotes: [],
-      favorites: []
+      favorites: [],
+      errorMessage: null
     };
 
     componentDidMount() {
@@ -25,7 +26,8 @@ class SearchAuthor extends Component {
         });
       })
       .catch((error) => {
-        this.setState({ error })
+        console.log(error);
+        this.setState({ errorMessage: 'Failed to data for Authors' })
       });
     };
 
@@ -44,7 +46,8 @@ class SearchAuthor extends Component {
         });
       })
       .catch((error) => {
-        this.setState({ error })
+        console.log(error);
+        this.setState({ errorMessage: 'Failed to quotes for Authors' })
       });
     };
 
@@ -55,7 +58,7 @@ class SearchAuthor extends Component {
     }
 // whatever's here keep that, add new quote as well
     render() {
-      const { authors, selectedAuthor, quotes , favorites } = this.state;
+      const { authors, selectedAuthor, quotes , favorites, errorMessage } = this.state;
 
       return (
         <div>
@@ -71,6 +74,9 @@ class SearchAuthor extends Component {
             </ul>
           </aside>
           <div className="author-content">
+            {errorMessage && (
+              <p>{errorMessage}</p>
+            )}
             {selectedAuthor && (
               <span>
                 <h3> Quotes by {selectedAuthor}</h3>
