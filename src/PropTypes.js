@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const AuthorPropTypes = {
+const SearchAuthorPropTypes = {
   authors: PropTypes.arrayOf(
     PropTypes.shape({
       _id: PropTypes.string.isRequired,
@@ -22,4 +22,21 @@ const AuthorPropTypes = {
         tags: PropTypes.arrayOf(PropTypes.string).isRequired,
       })
     ),
-}
+    errorMessage: PropTypes.string,
+    handleAuthorClick: PropTypes.func.isRequired,
+    handleFavorite: PropTypes.func.isRequired,
+};
+
+const HomepagePropTypes = {
+  quote: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    length: PropTypes.number.isRequired,
+    tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  })
+};
+
+const AppPropTypes = {};
+
+export { SearchAuthorPropTypes, HomepagePropTypes, AppPropTypes };
