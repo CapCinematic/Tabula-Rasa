@@ -10,7 +10,7 @@ function App() {
   return (
       <Switch>
         <Route exact path="/" component={Homepage} />
-        <Route exact path="/search" component={SearchAuthor} />
+        <Route path="/search" component={SearchAuthor} />
       </Switch>
   );
 }
