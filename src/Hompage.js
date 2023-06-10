@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { HomepagePropTypes } from "./PropTypes";
 
 class Homepage extends Component {
   constructor(props) {
@@ -9,8 +10,21 @@ class Homepage extends Component {
 
   componentDidMount() {
     fetch("https://api.quotable.io/random")
-      .then((response) => response.json())
-      .then((data) => this.setState({ quote: data }));
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        this.setState({ 
+          quote: data 
+        })
+      })
+      .catch((error) => {
+        console.log(error);
+        this.setState({ errorMessage: "Failed to data for Quotes" });
+      });
   }
 
   render() {
@@ -29,5 +43,7 @@ class Homepage extends Component {
     );
   }
 }
+
+Homepage.propTypes = HomepagePropTypes;
 
 export default Homepage;
