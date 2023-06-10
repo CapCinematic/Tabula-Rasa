@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./SearchAuthor.css";
 import FavoriteQuotes from "./FavoriteQuotes";
 import { Link } from "react-router-dom";
+import { SearchAuthorPropTypes } from "./PropTypes";
 
 class SearchAuthor extends Component {
   state = {
@@ -110,5 +111,7 @@ class SearchAuthor extends Component {
     );
   }
 }
+
+SearchAuthor.propTypes = SearchAuthorPropTypes;
 
 export default SearchAuthor;

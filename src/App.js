@@ -4,7 +4,7 @@ import Homepage from './Hompage';
 import './Homepage.css'
 import SearchAuthor from './SearchAuthor';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
+import { AppPropTypes } from './PropTypes';
 
 function App() {
   return (
@@ -14,5 +14,7 @@ function App() {
       </Switch>
   );
 }
+
+App.propTypes = AppPropTypes
 
 export default App;

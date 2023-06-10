@@ -14,4 +14,6 @@ function FavoriteQuotes({ favorites }) {
   return <div>{selectedQuotes}</div>;
 }
 
+
+
 export default FavoriteQuotes;
