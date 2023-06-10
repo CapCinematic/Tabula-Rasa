@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './SearchAuthor.css'
 import FavoriteQuotes from "./FavoriteQuotes";
+import { Link } from "react-router-dom";
 
 class SearchAuthor extends Component {
     state = {
@@ -12,20 +13,30 @@ class SearchAuthor extends Component {
 
     componentDidMount() {
       fetch('https://api.quotable.io/authors?sortBy=name&limit=20')
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch data')
+        }
+        return response.json();
+      })
       .then((data) => {
         this.setState({
           authors: data.results,
         });
       })
       .catch((error) => {
-        console.log(error);
+        this.setState({ error })
       });
     };
 
     handleAuthorClick (author){
       fetch(`https://api.quotable.io/quotes?author=${author}`)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Failed to fetch quotes for ${author}`)
+        }
+        return response.json();
+      })
       .then((data) => {
         this.setState({
           selectedAuthor: author,
@@ -33,7 +44,7 @@ class SearchAuthor extends Component {
         });
       })
       .catch((error) => {
-        console.log(error);
+        this.setState({ error })
       });
     };
 
@@ -73,9 +84,11 @@ class SearchAuthor extends Component {
             )}
           </div>
           <aside className="favorite-aside">
-          {favorites.length && <FavoriteQuotes favorites={this.state.favorites}/>}
+          {!!favorites.length && <FavoriteQuotes favorites={this.state.favorites}/>}
           </aside>
+          <Link to='/'>
           <button className="home-button">Return Home</button>
+          </Link>
         </div>
       )
     }

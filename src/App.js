@@ -1,12 +1,17 @@
 import './App.css';
 import React from 'react';
-// import Homepage from './Hompage';
+import Homepage from './Hompage';
 import './Homepage.css'
 import SearchAuthor from './SearchAuthor';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 
 function App() {
   return (
-   <SearchAuthor/>
+      <Switch>
+        <Route exact path="/" component={Homepage} />
+        <Route exact path="/search" component={SearchAuthor} />
+      </Switch>
   );
 }
 
