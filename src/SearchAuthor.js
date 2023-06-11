@@ -64,6 +64,7 @@ class SearchAuthor extends Component {
     return (
       <div>
         <h2 className="search-title">Select An author</h2>
+      <div className="search-author-container ">
         <aside className="authors-list">
           <ul>
             {authors.map((author) => (
@@ -80,13 +81,13 @@ class SearchAuthor extends Component {
           {errorMessage && <p>{errorMessage}</p>}
           {selectedAuthor && (
             <span>
-              <h3>Quotes by {selectedAuthor}</h3>
+              <h3 className="quotes-by-title">Quotes by {selectedAuthor}</h3>
               {quotes.length > 0 ? (
-                <ul>
+                <ul className="">
                   {quotes.map((quote) => (
-                    <li key={quote._id}>
+                    <li className={'quotes-list'} key={quote._id}>
                       "{quote.content}"{" "}
-                      <button onClick={() => this.handleFavorite(quote)}>
+                      <button className="favorite-button" onClick={() => this.handleFavorite(quote)}>
                         Favorite
                       </button>
                     </li>
@@ -103,6 +104,7 @@ class SearchAuthor extends Component {
             <FavoriteQuotes favorites={this.state.favorites} />
           )}
         </aside>
+      </div>
         <Link to="/">
           <button className="home-button">Return Home</button>
         </Link>

@@ -1,13 +1,16 @@
 import React from "react";
-import "./FavoriteQuotes.css";
 
 function FavoriteQuotes({ favorites }) {
   const selectedQuotes = favorites.map((favorite) => {
     return (
-      <div className="favorited-quotes" key={favorite._id}>
-        <p>Author:{favorite.author}</p>
-        <p>Quote:{favorite.content}</p>
-      </div>
+      <span className="favorited-quotes" key={favorite._id}>
+        <br></br>
+        <br></br>
+        <p>Author: {favorite.author}</p>
+        <br></br>
+        <br></br>
+        Quote: " {favorite.content} "
+      </span>
     );
   });
 
