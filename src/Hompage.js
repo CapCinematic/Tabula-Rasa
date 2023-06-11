@@ -5,7 +5,7 @@ import { HomepagePropTypes } from "./PropTypes";
 class Homepage extends Component {
   constructor(props) {
     super(props);
-    this.state = { quote: {} };
+    this.state = { quote: {}, errorMessage: null };
   }
 
   componentDidMount() {
@@ -28,10 +28,11 @@ class Homepage extends Component {
   }
 
   render() {
-    const { quote } = this.state;
+    const { quote, errorMessage } = this.state;
 
     return (
       <section className="home-page">
+        <p>{errorMessage}</p>
         <h1>Welcome</h1>
         <div className="quote-box">
           {quote.content} - {quote.author}

@@ -23,8 +23,6 @@ const SearchAuthorPropTypes = {
       })
     ),
     errorMessage: PropTypes.string,
-    // handleAuthorClick: PropTypes.func.isRequired,
-    // handleFavorite: PropTypes.func.isRequired,
 };
 
 const HomepagePropTypes = {
