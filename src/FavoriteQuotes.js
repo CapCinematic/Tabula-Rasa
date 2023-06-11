@@ -1,5 +1,4 @@
 import React from "react";
-import "./FavoriteQuotes.css";
 
 function FavoriteQuotes({ favorites }) {
   const selectedQuotes = favorites.map((favorite) => {
