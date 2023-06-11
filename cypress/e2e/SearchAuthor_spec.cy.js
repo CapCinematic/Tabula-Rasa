@@ -20,5 +20,11 @@ describe("SearchAuthor", () => {
     cy.get("aside").should("be.visible");
   });
 
+  it("returns to the homepage when the 'Return Home' button is clicked", () => {
+    cy.visit("/search");
+    cy.get(".home-button").click();
+    cy.url().should("eq", Cypress.config().baseUrl + "/");
+    cy.get("h1").should("have.text", "Welcome");
+  });
 });
 
