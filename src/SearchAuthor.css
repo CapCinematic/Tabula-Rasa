@@ -1,25 +1,51 @@
-.search-title {
+/* .search-title {
   border:5px solid sandybrown;
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 16px;
+  margin-bottom: 0px;
   text-align: center;
 }
 
+.search-author-container{
+  display: flex;
+  justify-content: space-around;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+
 .author-content {
-  border: 1px solid salmon;
-  border-radius: 5px;
-  margin-left: 30%;
-  margin-right: 20%;
+  display: flex;
+  flex-direction:row;
+  width: 40%;
+  margin: 0 10px;
   text-align: center;
+  border-radius: 5px;
+}
+
+.author-content h3{
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.author-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.author-content li {
+  margin-bottom: 8px;
 }
 
 .authors-list {
   border: 1px solid black;
-  float: left;
+  display:flex;
+  flex-direction: column;
   width: 30%;
-  margin-right: 30px;
-  margin-bottom: 32px;
+  margin: 0 10px;
 }
 
 .authors-list ul{
@@ -41,9 +67,10 @@
 }
 
 .favorite-aside {
-  float: right;
+  display:flex;
+  flex-direction: column;
   width: 30%;
-  margin-left: 30px;
+  margin: 0 10px;
 }
 
 .favorite-aside p {
@@ -57,27 +84,31 @@
   line-height: 1.5;
 }
 
-.home-button{
+.favorite-button {
   display: block;
   margin: 0 auto;
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: silver;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: bold;
 }
 
-.home-button:hover{
-  background-color: #3e8e41;
+.favorite-button:hover{
+  background-color: gold;
 }
+
+
 
 .quotes-list {
   margin-top: 32px;
+  margin-bottom: 8px;
 }
 
-.quotes-list h3 {
+.quotes-by-title {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 16px;
@@ -87,8 +118,168 @@
   list-style: none;
   padding: 0;
   margin: 0;
+} */
+
+.search-title {
+  border: 5px solid #F5A623;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Georgia", serif;
+  margin-bottom: 0px;
+  text-align: center;
+  color: #F5A623;
+  padding: 10px;
+  border-radius: 5px;
 }
 
-.quotes-list li {
+.search-author-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #e6e6e6;
+  font-style: italic;
+}
+
+.author-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 0 0 10px;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.author-content h3 {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Georgia", serif;
+  margin-bottom: 16px;
+  color: #F5A623;
+}
+
+.author-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.author-content li {
   margin-bottom: 8px;
+  color: #666;
+}
+
+.author-content li:hover {
+  color: #F5A623;
+}
+
+.authors-list {
+  border: solid 5px plum;
+  padding: 10px;
+  font-family: "Georgia", serif;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 0 10px;
+}
+
+.authors-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.authors-list li {
+  cursor: pointer;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  background-color: #fff;
+  color: #666;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.authors-list li:hover {
+  background-color: #F5A623;
+  color: #fff;
+  cursor: pointer;
+}
+
+.favorite-aside {
+  border: solid 5px #666;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 0 10px;
+  font-style: italic;
+}
+
+.favorite-aside p {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Georgia", serif;
+  margin-bottom: 8px;
+  color: #F5A623;
+}
+
+.favorite-aside ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.favorite-aside li {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* .favorite-aside li:hover {
+  color: #F5A623;
+  cursor: pointer;
+} */
+
+.favorite-button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #F5A623;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.favorite-button:hover{
+  cursor: pointer;
+}
+
+.favorited-quotes {
+  flex: auto;
+  justify-content: space-between;
+}
+
+.home-button{
+  display: block;
+  font-size: 1.5rem;
+  font-family: "Georgia", serif;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #162f3b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.home-button:hover{
+  background-color: #0004ec;
 }
