@@ -81,7 +81,7 @@ class SearchAuthor extends Component {
           {errorMessage && <p>{errorMessage}</p>}
           {selectedAuthor && (
             <span>
-              <h3> Quotes by {selectedAuthor}</h3>
+              <h3>Quotes by {selectedAuthor}</h3>
               {quotes.length > 0 ? (
                 <ul>
                   {quotes.map((quote) => (
