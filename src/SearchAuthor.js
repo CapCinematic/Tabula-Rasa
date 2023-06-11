@@ -57,7 +57,6 @@ class SearchAuthor extends Component {
       favorites: [...new Set([...this.state.favorites, quote])],
     });
   }
-  // whatever's here keep that, add new quote as well
   render() {
     const { authors, selectedAuthor, quotes, favorites, errorMessage } =
       this.state;
@@ -94,7 +93,7 @@ class SearchAuthor extends Component {
                   ))}
                 </ul>
               ) : (
-                <p> No Quotes Available For This Author At This Time.</p>
+                <p>No Quotes Available For This Author At This Time.</p>
               )}
             </span>
           )}

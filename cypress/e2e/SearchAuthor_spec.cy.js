@@ -8,11 +8,10 @@ describe("SearchAuthor", () => {
     cy.intercept("https://api.quotable.io/authors?sortBy=name&limit=20", {
       statusCode: 200,
       body: { results: authors },
-    })
-    cy.visit("/search")
-  })
+    });
+    cy.visit("/search");
+  });
   it("should check even if api is down", () => {
-  ;
     cy.get("li").should("have.length", 3);
     cy.get("li").first().should("have.text", "Party Man");
   });
@@ -25,7 +24,10 @@ describe("SearchAuthor", () => {
   it("display quotes by the selected author when an author is clicked", () => {
     cy.visit("/search");
     cy.get("li").first().click();
-    cy.get("p").should("have.text", " No Quotes Available For This Author At This Time.")
+    cy.get("p").should(
+      "have.text",
+      "No Quotes Available For This Author At This Time."
+    );
     cy.get("li").eq(1).click();
     cy.get("h3").should("have.text", "Quotes by Party Man");
     cy.get("ul").should("be.visible");
@@ -45,4 +47,3 @@ describe("SearchAuthor", () => {
     cy.get("h1").should("have.text", "Welcome");
   });
 });
-
